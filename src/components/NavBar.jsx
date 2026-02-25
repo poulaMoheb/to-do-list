@@ -4,7 +4,13 @@ import '../styles/Navbar.css'
 import TextField from '@mui/material/TextField'
 import Stack from '@mui/material/Stack'
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
+import { useTaskStore } from '../store/useTaskStore';
+
 function NavBar() {
+  const searchQuery = useTaskStore((state) => state.search);
+  const setSearchQuery = useTaskStore((state) => state.setSearch);
+
+
   return (
     <div className='navBar'>
       <div className="div-icon">
@@ -17,7 +23,7 @@ function NavBar() {
       {/* search Input */}
       <div>
         <Stack spacing={2} direction="row">
-          <TextField id="outlined-basic" label="Search" variant="outlined" />
+          <TextField id="outlined-basic" label="Search with title" value={searchQuery} onChange={(e)=>{setSearchQuery(e.target.value);}} variant="outlined" />
         </Stack>     
       </div>
     </div>

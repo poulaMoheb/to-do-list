@@ -1,10 +1,11 @@
 import { create } from 'zustand';
 
-const useTaskStore = create((set) => ({
+export const useTaskStore = create((set,get) => ({
     tasks: [],
     search: "",
-    addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
-    updateTask: (updatedTask) => set((state) => ({
-        tasks: state.tasks.map(task => task.id === updatedTask.id ? updatedTask : task)
-    }))
+    setTasks: (tasks) => set({ tasks }),
+    setSearch: (query) => set({ search: query }),
+    filteredTasks: (() =>
+        get().tasks.filter((task)=>
+             task.title.toLowerCase().includes(get().search.toLowerCase()))),
 }));

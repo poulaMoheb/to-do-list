@@ -94,8 +94,8 @@ export default function AddTaskPopUp({setIsAdded}) {
                         label="column"
                         onChange={(e)=>{setNewTask(prev => ({...prev,column:e.target.value}))}}
                         >
-                        {columns.map((column) => {
-                            return <MenuItem value={column}>{column}</MenuItem>
+                        {columns.map((column,index) => {
+                            return <MenuItem value={column} key={index}>{column}</MenuItem>
                         })}
                     </Select>
                     <InputLabel id="demo-simple-select-label">Level</InputLabel>

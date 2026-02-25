@@ -3,17 +3,19 @@ import './App.css';
 import Column from './components/Column';
 import NavBar from './components/NavBar';
 import { fetchTasks } from './api/taskApi';
-
+import { useTaskStore } from './store/useTaskStore';
 
 function App() {
   const columnTitles = ["To Do", "In Progress", "In Review", "Done"]; 
 
-
-  const [tasks, setTasks] = useState([]);
-  const [todoTasks, setTodoTasks] = useState([]);
-  const [inProgressTasks, setInProgressTasks] = useState([]);
-  const [inReviewTasks, setInReviewTasks] = useState([]);
-  const [doneTasks, setDoneTasks] = useState([]);
+  const tasks = useTaskStore((state) => state.tasks);
+  const setTasks = useTaskStore((state) => state.setTasks);
+  const searchQuery = useTaskStore((state) => state.search);
+  const filteredTasks = useTaskStore((state) => state.filteredTasks);
+  const todoTasks = filteredTasks().filter((task)=> task.column === "backlog");
+  const inProgressTasks = filteredTasks().filter((task)=> task.column === "in_progress");
+  const inReviewTasks = filteredTasks().filter((task)=> task.column === "review");
+  const doneTasks = filteredTasks().filter((task)=> task.column === "done");
   const [isAdded, setIsAdded] = useState(false);
 
   
@@ -31,36 +33,19 @@ function App() {
     setIsAdded(false);
   }, [isAdded === true]);
 
-  useEffect(() => {
-    tasks.map((task) => {
-      if (task?.column === "backlog") {
-        setTodoTasks((prev) => [...prev, task]);
-      }
-      else if (task?.column === "in_progress") {
-        setInProgressTasks((prev) => [...prev, task]);
-      }
-      else if (task?.column === "review") {
-        setInReviewTasks((prev) => [...prev, task]);
-      }
-      else if (task?.column === "done") {
-        setDoneTasks((prev) => [...prev, task]);
-      }
-  })
-  setIsAdded(false);
-  },[tasks, isAdded === true])
   
   
   return (
     <div className="App">
       <NavBar />
       <div className='columns'>
-        {columnTitles.map((title)=>{
+        {columnTitles.map((title, index)=>{
           let filteredTasks = [];
           title === "To Do" ? filteredTasks = todoTasks:
           title === "In Progress" ? filteredTasks = inProgressTasks:
           title === "In Review" ? filteredTasks = inReviewTasks
           : filteredTasks = doneTasks
-          return <Column key={title} title={title} setIsAdded={setIsAdded} tasks={filteredTasks} />
+          return <Column key={index} title={title} setIsAdded={setIsAdded} tasks={filteredTasks} />
         })}
       </div>
     </div>

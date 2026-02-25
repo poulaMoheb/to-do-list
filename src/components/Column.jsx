@@ -19,8 +19,8 @@ function Column({title, tasks, iconColor, setIsAdded}) {
             <h4 style={{color: iconColor}}>{title}</h4>
             <span>{tasks.length}</span>
         </div>
-        {tasks?.map((task) => {
-         return  <TaskCard key={task.id} task={task} />
+        {tasks?.map((task,index) => {
+         return  <TaskCard key={index} task={task} />
         })}
         <AddTaskPopUp setIsAdded={setIsAdded} />
     </div>
