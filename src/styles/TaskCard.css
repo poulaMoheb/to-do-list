@@ -1,0 +1,48 @@
+/* task container */
+.task-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background-color: white;
+    padding-left: 10px;
+    line-height: 20px;
+    border: 1px solid #c4bebe;
+    border-radius: 10px;
+}
+
+/* task header */
+.task-container h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* task description */
+.task-container span{
+    color: #7b7777;
+    font-weight: 500;
+}
+
+/* .task-status */
+.task-status{
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.task-status-high{
+    background-color: #f7cbcb;
+    color: rgb(255 0 33);
+}
+
+.task-status-medium{
+    background-color: #f9cfae;
+    color: rgb(255 120 0);
+}
+
+.task-status-low{
+    background-color: #bcb8b8;
+    color: rgb(96 96 96);
+}
