@@ -5,8 +5,30 @@ import '../styles/Column.css'
 import Button from '@mui/material/Button'
 import AddIcon from '@mui/icons-material/Add';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
+import { createTask } from '../api/taskApi';
 
 function Column({title, tasks, iconColor}) {
+
+
+  // Mock function to add a new task
+  // const addTaskHandler = async () => {
+  //   const newTask = {
+  //     id: "1",
+  //     title: "Design homepage",
+  //     description: "Include hero section and call-to-action buttons",
+  //     column: "backlog"
+  //   }
+
+  //   try {
+  //     const callTask = await createTask(newTask);
+  //     console.log("Task created:", createTask);
+  //   }
+  //   catch (error) {      
+  //     console.error("Error creating task:", error);
+  //   }
+  // }
+
+  
   return (
     <div className='column'>
         <div className="column-header">
@@ -14,11 +36,13 @@ function Column({title, tasks, iconColor}) {
                                                 :title==="In Progress"?"header-icon-inProgress"
                                                 :title === "In Review"?"header-icon-inReview"
                                                 :"header-icon-done"}`} />
-            <h4 style={{color: iconColor}}>TITLE</h4>
-            <span>5</span>
+            <h4 style={{color: iconColor}}>{title}</h4>
+            <span>{tasks.length}</span>
         </div>
-        <TaskCard /> 
-        <Button className='column-button' startIcon={<AddIcon/>} >Add Task</Button>
+        {tasks?.map((task) => {
+         return  <TaskCard key={task.id} task={task} />
+        })}
+        <Button className='column-button' startIcon={<AddIcon/>}  >Add Task</Button>
     </div>
   )
 }

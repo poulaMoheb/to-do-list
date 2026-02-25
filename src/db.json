@@ -1,82 +1,74 @@
 {
   "tasks": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Design homepage",
-      "description": "Include hero section and call-to-action buttons",
-      "column": "backlog"
+      "description": "Include hero section",
+      "column": "backlog",
+      "level": "medium"
     },
     {
-      "id": "2",
-      "title": "Setup project structure",
-      "description": "Initialize React app and organize folders",
-      "column": "backlog"
+      "id": 2,
+      "title": "Implement login API",
+      "description": "Connect to backend authentication",
+      "column": "in_progress",
+      "level": "high"
     },
     {
-      "id": "3",
-      "title": "Implement authentication UI",
-      "description": "Create login and register forms with validation",
-      "column": "in_progress"
+      "id": 3,
+      "title": "Setup database schema",
+      "description": "Define tables for users and tasks",
+      "column": "backlog",
+      "level": "high"
     },
     {
-      "id": "4",
-      "title": "Build Kanban columns",
-      "description": "Create 4 columns layout using Material UI Grid",
-      "column": "in_progress"
+      "id": 4,
+      "title": "Create profile page",
+      "description": "Display user information and stats",
+      "column": "in_progress",
+      "level": "medium"
     },
     {
-      "id": "5",
-      "title": "Add drag and drop",
-      "description": "Integrate react-beautiful-dnd for moving tasks",
-      "column": "review"
+      "id": 5,
+      "title": "Write unit tests",
+      "description": "Cover all components with tests",
+      "column": "review",
+      "level": "low"
     },
     {
-      "id": "6",
-      "title": "Optimize API calls",
-      "description": "Use React Query for caching and refetching",
-      "column": "review"
+      "id": 6,
+      "title": "Optimize images",
+      "description": "Compress all homepage images",
+      "column": "done",
+      "level": "low"
     },
     {
-      "id": "7",
-      "title": "Fix UI responsiveness",
-      "description": "Ensure layout works on mobile and tablet screens",
-      "column": "done"
+      "id": 7,
+      "title": "Implement search functionality",
+      "description": "Enable filtering by name and category",
+      "column": "backlog",
+      "level": "medium"
     },
     {
-      "id": "8",
-      "title": "Deploy application",
-      "description": "Deploy project to Vercel and test production build",
-      "column": "done"
+      "id": 8,
+      "title": "Setup CI/CD pipeline",
+      "description": "Automate build and deployment",
+      "column": "review",
+      "level": "high"
     },
     {
-      "id": "9",
-      "title": "Add search functionality",
-      "description": "Filter tasks by title and description",
-      "column": "backlog"
+      "id": 9,
+      "title": "Fix navbar responsiveness",
+      "description": "Ensure mobile and tablet compatibility",
+      "column": "in_progress",
+      "level": "medium"
     },
     {
-      "id": "10",
-      "title": "Implement pagination",
-      "description": "Add page limit and navigation for each column",
-      "column": "in_progress"
-    },
-    {
-      "id": "5c10",
-      "lsi": "15",
-      "roleID": "6",
-      "feedID": "750",
-      "userClientID": "6556",
-      "userAccountID": "SANTEON",
-      "userLegalID": "10235"
-    },
-    {
-      "id": "4634",
-      "lsi": "15",
-      "roleID": "6",
-      "feedID": "750",
-      "userClientID": "6556",
-      "userAccountID": "SANTEON",
-      "userLegalID": "10235"
+      "id": 10,
+      "title": "Update documentation",
+      "description": "Add setup instructions and API details",
+      "column": "done",
+      "level": "low"
     }
   ]
 }

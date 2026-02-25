@@ -1,14 +1,12 @@
 import React from 'react'
 import '../styles/TaskCard.css'
 
-function TaskCard({status}) {
+function TaskCard({task}) {
   return (
     <div className='task-container'>
-        <h3>title</h3>
-        <span>description</span>
-        <p className={`task-status ${"task-status " + status === "High"?"task-status-high"
-                                                :status==="Medium"?"task-status-medium"
-                                                :"task-status-low"}`}>status</p>
+        <h3>{task.title}</h3>
+        <span>{task.description}</span>
+        <p className={`task-status task-status-${task.level}`}>{task.level}</p>
     </div>
   )
 }
