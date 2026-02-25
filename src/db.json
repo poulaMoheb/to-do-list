@@ -1,0 +1,82 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Design homepage",
+      "description": "Include hero section and call-to-action buttons",
+      "column": "backlog"
+    },
+    {
+      "id": "2",
+      "title": "Setup project structure",
+      "description": "Initialize React app and organize folders",
+      "column": "backlog"
+    },
+    {
+      "id": "3",
+      "title": "Implement authentication UI",
+      "description": "Create login and register forms with validation",
+      "column": "in_progress"
+    },
+    {
+      "id": "4",
+      "title": "Build Kanban columns",
+      "description": "Create 4 columns layout using Material UI Grid",
+      "column": "in_progress"
+    },
+    {
+      "id": "5",
+      "title": "Add drag and drop",
+      "description": "Integrate react-beautiful-dnd for moving tasks",
+      "column": "review"
+    },
+    {
+      "id": "6",
+      "title": "Optimize API calls",
+      "description": "Use React Query for caching and refetching",
+      "column": "review"
+    },
+    {
+      "id": "7",
+      "title": "Fix UI responsiveness",
+      "description": "Ensure layout works on mobile and tablet screens",
+      "column": "done"
+    },
+    {
+      "id": "8",
+      "title": "Deploy application",
+      "description": "Deploy project to Vercel and test production build",
+      "column": "done"
+    },
+    {
+      "id": "9",
+      "title": "Add search functionality",
+      "description": "Filter tasks by title and description",
+      "column": "backlog"
+    },
+    {
+      "id": "10",
+      "title": "Implement pagination",
+      "description": "Add page limit and navigation for each column",
+      "column": "in_progress"
+    },
+    {
+      "id": "5c10",
+      "lsi": "15",
+      "roleID": "6",
+      "feedID": "750",
+      "userClientID": "6556",
+      "userAccountID": "SANTEON",
+      "userLegalID": "10235"
+    },
+    {
+      "id": "4634",
+      "lsi": "15",
+      "roleID": "6",
+      "feedID": "750",
+      "userClientID": "6556",
+      "userAccountID": "SANTEON",
+      "userLegalID": "10235"
+    }
+  ]
+}
