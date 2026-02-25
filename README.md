@@ -1,3 +1,20 @@
+# To-Do List Application
+
+This project is a simple to-do list built with React and powered by [Create React App](https://github.com/facebook/create-react-app).
+
+## Project Overview
+
+The application lets users add and manage tasks. It integrates **Zustand** for state management, allowing centralized storage and reactive updates of task data. A search feature enables users to filter tasks by title, supporting quick retrieval. Adding a new task automatically updates the Zustand store and reflects in the UI immediately.
+
+The core features include:
+
+- Task creation with a pop-up form
+- Real-time updates using Zustand store (`src/store/useTaskStore.js`)
+- Search bar to filter existing tasks
+- Drag-and-drop reordering (using dnd-kit)
+
+This README will also cover available scripts and deployment instructions.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
