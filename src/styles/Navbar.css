@@ -1,6 +1,6 @@
 :root {
   --main-color: blue;
-  --nav-bar-color: #c8c8c8;
+  --nav-bar-color: #ebebeb;
 }
 .navBar{
     display: flex;

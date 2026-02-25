@@ -8,10 +8,10 @@ function App() {
     <div className="App">
       <NavBar />
       <div className='columns'>
-        <Column/>
-        <Column/>
-        <Column/>
-        <Column/>
+        <Column title="To Do"/>
+        <Column title="In Progress"/>
+        <Column title="In Review"/>
+        <Column title="Done"/>
       </div>
     </div>
   );
