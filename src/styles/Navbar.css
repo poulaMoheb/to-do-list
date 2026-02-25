@@ -7,11 +7,25 @@
     justify-content: space-between; 
     padding: 15px;
     align-items: center;
-    background-color: var(--nav-bar-color)  ;
+    background-color: var(--nav-bar-color);
+    height: 65px;
+    border-bottom: 1px solid #adb1b9;
+}
+.icon{
+    font-size: 50px;
+    fill: #0e4ab8;
 }
 .div-icon{
     display: flex;
     gap: 5px;
     justify-content: center;
     align-items: center;
+}
+.div-icon {
+    line-height: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.div-icon h6{
+    color:#3e3e3e;
 }

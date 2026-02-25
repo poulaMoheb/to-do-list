@@ -8,8 +8,11 @@ function NavBar() {
   return (
     <div className='navBar'>
       <div className="div-icon">
-        <DragIndicatorIcon className="icon" />
-        <h2>Kanban To Do List</h2>
+        <DragIndicatorIcon className="icon" sx={{ fontSize: 50, color: '#0e4ab8' }}  />
+        <div className="div logo">
+          <h4>Kanban To Do List</h4>
+          <h6>10 Tasks</h6>
+        </div>  
       </div>
       {/* search Input */}
       <div>
