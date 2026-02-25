@@ -4,6 +4,7 @@ const API_BASE_URL = "http://localhost:4000/tasks";
 
 export const fetchTasks = async (page,limit) => {
     const res = await axios.get(`${API_BASE_URL}_page=${page}&_limit=${limit}`);
+    return res.data;
 }
 
 export const createTask = async (task) => {
