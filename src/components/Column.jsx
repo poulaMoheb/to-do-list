@@ -2,31 +2,11 @@ import React from 'react'
 import TaskCard from './TaskCard'
 import '../styles/Column.css'
 // MUI components
-import Button from '@mui/material/Button'
-import AddIcon from '@mui/icons-material/Add';
 import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
-import { createTask } from '../api/taskApi';
+import AddTaskPopUp from './AddTaskPopUp';
+function Column({title, tasks, iconColor, setIsAdded}) {
 
-function Column({title, tasks, iconColor}) {
 
-
-  // Mock function to add a new task
-  // const addTaskHandler = async () => {
-  //   const newTask = {
-  //     id: "1",
-  //     title: "Design homepage",
-  //     description: "Include hero section and call-to-action buttons",
-  //     column: "backlog"
-  //   }
-
-  //   try {
-  //     const callTask = await createTask(newTask);
-  //     console.log("Task created:", createTask);
-  //   }
-  //   catch (error) {      
-  //     console.error("Error creating task:", error);
-  //   }
-  // }
 
   
   return (
@@ -42,7 +22,7 @@ function Column({title, tasks, iconColor}) {
         {tasks?.map((task) => {
          return  <TaskCard key={task.id} task={task} />
         })}
-        <Button className='column-button' startIcon={<AddIcon/>}  >Add Task</Button>
+        <AddTaskPopUp setIsAdded={setIsAdded} />
     </div>
   )
 }

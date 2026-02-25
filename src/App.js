@@ -1,4 +1,4 @@
-import { use, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Column from './components/Column';
 import NavBar from './components/NavBar';
@@ -14,6 +14,7 @@ function App() {
   const [inProgressTasks, setInProgressTasks] = useState([]);
   const [inReviewTasks, setInReviewTasks] = useState([]);
   const [doneTasks, setDoneTasks] = useState([]);
+  const [isAdded, setIsAdded] = useState(false);
 
   
   useEffect(() => {
@@ -27,7 +28,8 @@ function App() {
       }
     }
     getTasks();
-  }, []);
+    setIsAdded(false);
+  }, [isAdded === true]);
 
   useEffect(() => {
     tasks.map((task) => {
@@ -44,7 +46,8 @@ function App() {
         setDoneTasks((prev) => [...prev, task]);
       }
   })
-  },[tasks])
+  setIsAdded(false);
+  },[tasks, isAdded === true])
   
   
   return (
@@ -57,7 +60,7 @@ function App() {
           title === "In Progress" ? filteredTasks = inProgressTasks:
           title === "In Review" ? filteredTasks = inReviewTasks
           : filteredTasks = doneTasks
-          return <Column key={title} title={title} tasks={filteredTasks} />
+          return <Column key={title} title={title} setIsAdded={setIsAdded} tasks={filteredTasks} />
         })}
       </div>
     </div>
