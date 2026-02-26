@@ -9,11 +9,12 @@ function App() {
   const columnTitles = ["To Do", "In Progress", "In Review", "Done"]; 
 
   const setTasks = useTaskStore((state) => state.setTasks);
-  const filteredTasks = useTaskStore((state) => state.filteredTasks);
-  const todoTasks = filteredTasks().filter((task)=> task.column === "backlog");
-  const inProgressTasks = filteredTasks().filter((task)=> task.column === "in_progress");
-  const inReviewTasks = filteredTasks().filter((task)=> task.column === "review");
-  const doneTasks = filteredTasks().filter((task)=> task.column === "done");
+  const filteredTasks = useTaskStore((state) => state.filteredTasks());
+
+  const todoTasks = filteredTasks.filter((task)=> task.column === "backlog");
+  const inProgressTasks = filteredTasks.filter((task)=> task.column === "in_progress");
+  const inReviewTasks = filteredTasks.filter((task)=> task.column === "review");
+  const doneTasks = filteredTasks.filter((task)=> task.column === "done");
   const [isAdded, setIsAdded] = useState(false);
 
   
@@ -26,7 +27,7 @@ function App() {
       catch (error) {
         console.error("Error fetching tasks:", error);
       }
-    }
+  }
     getTasks();
     setIsAdded(false);
   }, [isAdded, setTasks]);
