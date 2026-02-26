@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { updateTask as apiUpdateTask } from '../api/taskApi';
+import { updateTask as apiUpdateTask, deleteTask as apiDeleteTask } from '../api/taskApi';
 
 export const useTaskStore = create((set,get) => {
     let lastTasks = null;
@@ -37,6 +37,17 @@ export const useTaskStore = create((set,get) => {
             } catch (err) {
                 set({ tasks });
                 console.error('Failed to update task column:', err);
+            }
+        },
+        deleteTask: async (id) => {
+            const { tasks } = get();
+            const original = tasks;
+            set({ tasks: tasks.filter(t => String(t.id) !== String(id)) });
+            try {
+                await apiDeleteTask(id);
+            } catch (err) {
+                set({ tasks: original });
+                console.error('Failed to delete task:', err);
             }
         },
     };

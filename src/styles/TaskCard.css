@@ -9,6 +9,19 @@
     line-height: 20px;
     border: 1px solid #c4bebe;
     border-radius: 10px;
+    cursor: grab;
+    padding: 10px 10px 12px 12px;
+}
+
+.task-top{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.delete-btn{
+    color: #9b9b9b;
 }
 
 /* task header */
