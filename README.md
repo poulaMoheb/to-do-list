@@ -2,6 +2,9 @@
 
 This project is a simple to-do list built with React and powered by [Create React App](https://github.com/facebook/create-react-app).
 
+## Live Demo
+You can view a live demo of the application [here](https://to-do-list-iota-one-38.vercel.app/).
+
 ## Project Overview
 
 The application lets users add and manage tasks. It integrates **Zustand** for state management, allowing centralized storage and reactive updates of task data. A search feature enables users to filter tasks by title, supporting quick retrieval. Adding a new task automatically updates the Zustand store and reflects in the UI immediately.
