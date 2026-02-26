@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { updateTask as apiUpdateTask } from '../api/taskApi';
 
 export const useTaskStore = create((set,get) => {
     let lastTasks = null;
@@ -25,5 +26,18 @@ export const useTaskStore = create((set,get) => {
         setTasks: (tasks) => set({ tasks }),
         setSearch: (query) => set({ search: query }),
         filteredTasks: computeFiltered,
+        moveTask: async (id, newColumn) => {
+            const { tasks } = get();
+            const task = tasks.find(t => String(t.id) === String(id));
+            if (!task) return;
+            const updatedTask = { ...task, column: newColumn };
+            set({ tasks: tasks.map(t => t.id === task.id ? updatedTask : t) });
+            try {
+                await apiUpdateTask(task.id, updatedTask);
+            } catch (err) {
+                set({ tasks });
+                console.error('Failed to update task column:', err);
+            }
+        },
     };
 });
