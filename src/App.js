@@ -8,9 +8,7 @@ import { useTaskStore } from './store/useTaskStore';
 function App() {
   const columnTitles = ["To Do", "In Progress", "In Review", "Done"]; 
 
-  const tasks = useTaskStore((state) => state.tasks);
   const setTasks = useTaskStore((state) => state.setTasks);
-  const searchQuery = useTaskStore((state) => state.search);
   const filteredTasks = useTaskStore((state) => state.filteredTasks);
   const todoTasks = filteredTasks().filter((task)=> task.column === "backlog");
   const inProgressTasks = filteredTasks().filter((task)=> task.column === "in_progress");
@@ -31,7 +29,7 @@ function App() {
     }
     getTasks();
     setIsAdded(false);
-  }, [isAdded === true]);
+  }, [isAdded, setTasks]);
 
   
   
